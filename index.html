@@ -82,6 +82,9 @@
             <li>
                 <a href="javascript:Telegram.WebApp.openLink('https://telegra.ph/api',{try_instant_view:true});">Open link inside Telegram webview</a>
             </li>
+            <li>
+                <a href="test.html">Test Go Back</a>
+            </li>
         </ul>
 
         <h1>Buttons</h1>
@@ -111,7 +114,7 @@
             Telegram.WebApp.showAlert('Main Button was clicked')
         });	
         Telegram.WebApp.MainButton.show();
-
+        Telegram.WebApp.BackButton.hide();
         // Function to call showPopup API
         function showPopup() {
             Telegram.WebApp.showPopup({
