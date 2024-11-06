@@ -82,19 +82,31 @@
             <li>
                 <a href="javascript:Telegram.WebApp.openLink('https://telegra.ph/api',{try_instant_view:true});">Open link inside Telegram webview</a>
             </li>
+            <li>
+                <a href="test.html">Test Go Back</a>
+            </li>
         </ul>
 
         <h1>Buttons</h1>
         <button onclick="Telegram.WebApp.expand();">Expand Webview</button>
         <button onclick="toggleMainButton();">Toggle Main Button</button>
-        <h1>Iframe Insert Trade SDK</h1>
-        <iframe src="https://www.hpxshop.me/perpetual?from=propTrading&5fu3=pttd&lang=en-US&theme=dark&vicolor=F0B90B&leverage=100&leverageStr=&sfg6=eyJhbGciOiJSUzI1NiJ9.eyJhcmVhIjoiMDAwMCIsInVpZCI6IjkwMDAwMDAyMTI0MSIsInByb3BfbGV2ZXJhZ2UiOiIxMDAiLCJtb2JpbGUiOiI5MDAwMDAwMjEyNDEiLCJleHAiOjE3NjA0MDU3NjR9.hVbi4A5OdruFcUgc0rVDSO4Yy1gQ2-auY2K3x2VNC9-aECdK2akX3t_SOf5Y-t7G-WatKYk-ioemtujGdGD9gzykgRJgA-3rhXGdz0pGD9TKn79dYt2k97bPs-KoT8MWaPMHCPt_V8yssdTxNxTNzmM4UByJF5OO5ZIxXtSW3RpuD2-Aua3VQ8KXMsYWQaplgnNsXZrxlsm379Fo9AS903Isp64uLhrc_jxrfGz_nzCQBj43A209VSw6pQJTimo54UDD_eD90RuxI3aHNV0t1kDa2ypyVqCTHL0CgFjp-shl1UwDAbcAVOg0eZU4KEJychL8Y7zfczk__I-BcvjYUw" width="100%" height="600px" frameborder="0"></iframe>
+        <!-- <h1>Iframe Insert Trade SDK</h1>
+        <iframe src="https://www.hpxshop.me/perpetual?from=propTrading&5fu3=pttd&lang=en-US&theme=dark&vicolor=F0B90B&leverage=100&leverageStr=&sfg6=eyJhbGciOiJSUzI1NiJ9.eyJhcmVhIjoiMDAwMCIsInVpZCI6IjkwMDAwMDAyMTI0MSIsInByb3BfbGV2ZXJhZ2UiOiIxMDAiLCJtb2JpbGUiOiI5MDAwMDAwMjEyNDEiLCJleHAiOjE3NjA0MDU3NjR9.hVbi4A5OdruFcUgc0rVDSO4Yy1gQ2-auY2K3x2VNC9-aECdK2akX3t_SOf5Y-t7G-WatKYk-ioemtujGdGD9gzykgRJgA-3rhXGdz0pGD9TKn79dYt2k97bPs-KoT8MWaPMHCPt_V8yssdTxNxTNzmM4UByJF5OO5ZIxXtSW3RpuD2-Aua3VQ8KXMsYWQaplgnNsXZrxlsm379Fo9AS903Isp64uLhrc_jxrfGz_nzCQBj43A209VSw6pQJTimo54UDD_eD90RuxI3aHNV0t1kDa2ypyVqCTHL0CgFjp-shl1UwDAbcAVOg0eZU4KEJychL8Y7zfczk__I-BcvjYUw" width="100%" height="600px" frameborder="0"></iframe> -->
     </main>
     <div id="viewport"></div>
     <div id="viewport-params-size"></div>
     <div id="viewport-params-expand"></div>
-    <script src="https://telegram.org/js/telegram-web-app.js"></script>
+    <!-- <script src="https://telegram.org/js/telegram-web-app.js"></script>
     <script>
+        function getQueryString(name) {
+            var reg = new RegExp("(^|&)" + name + "=([^&]*)(&|$)", "i");
+            var r = window.location.search.substr(1).match(reg);
+            if (r != null) {
+            return unescape(r[2]);
+            }
+            return null;
+        }
+        
         // Init TWA
         Telegram.WebApp.ready();
 
@@ -108,10 +120,16 @@
             text: 'Main Button'
         });
         Telegram.WebApp.MainButton.onClick(function () {
-            Telegram.WebApp.showAlert('Main Button was clicked')
+            let msg = '当前环境是：'
+            msg += getQueryString('from') == 'tg' ? 'tg 环境' : 'web 环境'
+            alert(location.href)
+            alert(location.search)
+            // Telegram.WebApp.showAlert('Main Button was clicked')
+            alert(msg)
+            alert(Telegram.WebApp.initData)
         });	
         Telegram.WebApp.MainButton.show();
-
+        Telegram.WebApp.BackButton.hide();
         // Function to call showPopup API
         function showPopup() {
             Telegram.WebApp.showPopup({
@@ -155,7 +173,7 @@
             document.body.setAttribute('style', '--bg-color:' + Telegram.WebApp.backgroundColor);
         });
 
-    </script>
+    </script> -->
 
     <!-- Eruda is console for mobile browsers -->
     <script src="https://cdn.jsdelivr.net/npm/eruda"></script>
