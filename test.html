@@ -8,18 +8,24 @@
 </head>
 <body>
   <div>Test go back</div>
-  <script src="https://telegram.org/js/telegram-web-app.js"></script>
-    <script>
-        // Init TWA
-        Telegram.WebApp.ready();
-        Telegram.WebApp.BackButton.show();
-        Telegram.WebApp.BackButton.onClick(function() {
-            window.history.go(-1)
-        });
-        console.log(location, window.location)
-        console.log(Telegram.WebApp)
-    </script>
-    <script src="https://cdn.jsdelivr.net/npm/eruda"></script>
-    <script>eruda.init();</script>
+  <!-- <script src="https://telegram.org/js/telegram-web-app.js"></script> -->
+  <script>
+    let script = document.createElement('script');
+    script.src = 'https://telegram.org/js/telegram-web-app.js';
+    script.onLoad = function () {
+      console.log('load')
+    }
+    document.body.appendChild(script)
+      // Init TWA
+      Telegram.WebApp.ready();
+      Telegram.WebApp.BackButton.show();
+      Telegram.WebApp.BackButton.onClick(function() {
+          window.history.go(-1)
+      });
+      console.log(location, window.location)
+      console.log(Telegram.WebApp)
+  </script>
+  <script src="https://cdn.jsdelivr.net/npm/eruda"></script>
+  <script>eruda.init();</script>
 </body>
 </html>
